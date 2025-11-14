@@ -18,8 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${Chalkboard200Regular.className} antialiased`}>
+    <html lang="en" className="h-full">
+      <body
+        className={`${Chalkboard200Regular.className} bg-no-repeat bg-full-size bg-[url(/Media/Galaxy_chalk_bg_3.png)] antialiased`}
+      >
+        <div className="bg-red-900/50">
+          <p>Header</p>
+        </div>
         {children}
       </body>
     </html>
