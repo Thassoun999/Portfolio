@@ -2,37 +2,37 @@ import Image from "next/image";
 import HomeButton from "@/components/HomeButton";
 
 export default function Home() {
-  const filePathLogoGif = "/Media/BackSun1_2025_Transparent.gif";
+  const filePathLogoGif = "/Media/BackSun1_2025_new_Transparent.gif";
   // 355 x 261 - for Logo
 
   // TODO: Redraw all images giving them the same bounding box
 
   const Image1 = [
-    "/Media/words1_unhover_transparent.gif",
-    "/Media/words1_hover_transparent.gif",
+    "/Media/words1_new_unhover_transparent.gif",
+    "/Media/words1_new_hover_transparent.gif",
   ];
   const Image2 = [
-    "/Media/words2_unhover_transparent.gif",
-    "/Media/Words2_hover_transparent.gif",
+    "/Media/words2_new_unhover_transparent.gif",
+    "/Media/Words2_new_hover_transparent.gif",
   ];
   const Image3 = [
-    "/Media/words3_unhover_transparent.gif",
-    "/Media/words3_hover_transparent.gif",
+    "/Media/words3_new_unhover_transparent.gif",
+    "/Media/words3_new_hover_transparent.gif",
   ];
   return (
     <div>
       <main>
-        <div className="flex flex-row w-full mt-5 mb-5">
-          <div id="items-container" className="w-1/4 flex flex-col relative">
+        <div className="flex flex-row w-3/4 mt-5 mb-5 mx-auto">
+          <div id="items-container" className="w-full flex flex-col relative">
             <HomeButton pathnameUnhover={Image1[0]} pathnameHover={Image1[1]} />
             <HomeButton pathnameUnhover={Image2[0]} pathnameHover={Image2[1]} />
             <HomeButton pathnameUnhover={Image3[0]} pathnameHover={Image3[1]} />
           </div>
-          <div className="w-3/4 relative aspect-2/1">
+          <div className="w-full relative">
             <Image
               src={filePathLogoGif}
               alt="Logo Gif"
-              className="object-contain"
+              className="object-contain pb-5"
               fill
               unoptimized
             />

@@ -19,7 +19,7 @@ export default function HomeButton({
       key={`Image-${hover}`}
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
-      className="relative aspect-280/30 w-full ml-2 mb-2 mt-2"
+      className="relative aspect-6/1"
     >
       <Image
         src={pathnameUnhover}

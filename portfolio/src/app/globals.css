@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+  background-color: black;
+}
+
 .bg-full-size {
   background-size: 100% 100%;
 }

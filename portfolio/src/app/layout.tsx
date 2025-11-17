@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -12,21 +13,31 @@ export const metadata: Metadata = {
   authors: [{ name: "Sydra (Tae) Hassoun" }],
 };
 
+export const heroImage = "/Media/LogoTitleCombine.gif";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
-      <body
-        className={`${Chalkboard200Regular.className} bg-no-repeat bg-full-size bg-[url(/Media/Galaxy_chalk_bg_3.png)] antialiased`}
-      >
-        <div className="bg-red-900/50">
-          <p>Header</p>
-        </div>
+    <html lang="en">
+      <body className={`${Chalkboard200Regular.className} h-full w-full`}>
+        <header className="p-3 flex flex-col">
+          <div id="hero" className="relative aspect-14/2">
+            <Image
+              src={heroImage}
+              className="object-contain"
+              fill
+              unoptimized
+              alt="Hero Gif"
+            />
+          </div>
+        </header>
         {children}
       </body>
     </html>
   );
 }
+
+//bg-no-repeat bg-full-size bg-[url(/Media/Galaxy_chalk_bg_4.png)] antialiased
