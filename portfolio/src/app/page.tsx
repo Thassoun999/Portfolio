@@ -22,17 +22,32 @@ export default function Home() {
   return (
     <div>
       <main>
-        <div className="flex flex-row w-3/4 mt-5 mb-5 mx-auto">
-          <div id="items-container" className="w-full flex flex-col relative">
-            <HomeButton pathnameUnhover={Image1[0]} pathnameHover={Image1[1]} />
-            <HomeButton pathnameUnhover={Image2[0]} pathnameHover={Image2[1]} />
-            <HomeButton pathnameUnhover={Image3[0]} pathnameHover={Image3[1]} />
+        <div className="flex flex-row w-3/4 mt-5 mb-5 mx-auto gap-6">
+          <div
+            id="items-container"
+            className="flex flex-col relative items-end w-4/5"
+          >
+            <HomeButton
+              hrefLink="/about"
+              pathnameUnhover={Image1[0]}
+              pathnameHover={Image1[1]}
+            />
+            <HomeButton
+              hrefLink="/contact"
+              pathnameUnhover={Image2[0]}
+              pathnameHover={Image2[1]}
+            />
+            <HomeButton
+              hrefLink="/work"
+              pathnameUnhover={Image3[0]}
+              pathnameHover={Image3[1]}
+            />
           </div>
-          <div className="w-full relative">
+          <div className="w-full relative aspect-3/2">
             <Image
               src={filePathLogoGif}
               alt="Logo Gif"
-              className="object-contain pb-5"
+              className="object-contain object-left pb-5"
               fill
               unoptimized
             />

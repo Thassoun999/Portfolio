@@ -1,44 +1,59 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 export type HomeButtonProps = {
   pathnameUnhover: string;
   pathnameHover: string;
+  hrefLink: string;
+  className?: string;
   // className: string; --use TWMerge if HomeButton has custom button
 };
 
 export default function HomeButton({
   pathnameUnhover,
   pathnameHover,
+  hrefLink,
+  className = "",
 }: HomeButtonProps) {
   const [hover, setHover] = useState(false);
 
   return (
-    <div
+    <Link
+      href={hrefLink}
       key={`Image-${hover}`}
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
-      className="relative aspect-6/1"
+      className="relative aspect-6/2 w-full"
     >
       <Image
         src={pathnameUnhover}
         alt="HomeButtonImage"
         fill
         unoptimized
-        className={`object-contain transition-opacity duration-150 ${
-          hover ? "opacity-0" : "opacity-100"
-        }`}
+        className={twMerge(
+          className,
+          `object-contain object-right transition-opacity duration-150 ${
+            hover ? "opacity-0" : "opacity-100"
+          }`
+        )}
       />
       <Image
         src={pathnameHover}
         alt="HomeButtonImage"
         fill
         unoptimized
-        className={`object-contain transition-opacity duration-150 ${
-          hover ? "opacity-100" : "opacity-0"
-        }`}
+        className={twMerge(
+          className,
+          `object-contain object-right transition-opacity duration-150 ${
+            hover ? "opacity-100" : "opacity-0"
+          }`
+        )}
       />
-    </div>
+    </Link>
   );
 }
+
+// object-contain automatically centers the object!
