@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Sydra (Tae) Hassoun" }],
 };
 
-export const heroImage = "/Media/LogoTitleCombine.gif";
+export const bannerImage = "/Media/LogoTitleCombine.gif";
 
 export default function RootLayout({
   children,
@@ -26,14 +26,14 @@ export default function RootLayout({
       <body
         className={`${Chalkboard200Regular.className} bg-no-repeat bg-full-size bg-[url(/Media/stars_back1.jpg)] min-h-screen w-full`}
       >
-        <header className="p-3 flex flex-col">
-          <Link href="/" id="hero" className="relative aspect-12/2">
+        <header className="relative mt-5 mb-1 w-90/100 aspect-3/1 sm:w-3/4 mx-auto">
+          <Link href="/" id="banner">
             <Image
-              src={heroImage}
+              src={bannerImage}
               className="object-contain"
               fill
               unoptimized
-              alt="Hero Gif"
+              alt="Banner Gif"
             />
           </Link>
         </header>
@@ -44,3 +44,6 @@ export default function RootLayout({
 }
 
 //bg-no-repeat bg-full-size bg-[url(/Media/Galaxy_chalk_bg_4.png)] antialiased
+// fill sets position to absolute and inset to 0, so we need the parent to be
+// 1) Relative
+// 2) An aspect ratio container that gives the parent element height without needing to know image's real dimensions

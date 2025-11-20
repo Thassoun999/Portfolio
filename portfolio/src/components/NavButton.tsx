@@ -26,7 +26,7 @@ export default function NavButtonProps({
       key={`Image-${hover}`}
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
-      className="relative w-full aspect-3/2"
+      className="relative w-full aspect-3/1"
     >
       <Image
         src={pathnameUnhover}
@@ -35,7 +35,7 @@ export default function NavButtonProps({
         unoptimized
         className={twMerge(
           className,
-          `object-contain object-center transition-opacity duration-150 ${
+          `object-contain items-center transition-opacity duration-150 ${
             hover ? "opacity-0" : "opacity-100"
           }`
         )}
@@ -48,7 +48,7 @@ export default function NavButtonProps({
         unoptimized
         className={twMerge(
           className,
-          `object-contain object-center transition-opacity duration-150 ${
+          `object-contain items-center transition-opacity duration-150 ${
             hover ? "opacity-100" : "opacity-0"
           }`
         )}

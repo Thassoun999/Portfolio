@@ -26,7 +26,7 @@ export default function HomeButton({
       key={`Image-${hover}`}
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
-      className="relative aspect-6/2 w-full"
+      className="relative aspect-5/1 sm:aspect-3/1"
     >
       <Image
         src={pathnameUnhover}
@@ -35,7 +35,7 @@ export default function HomeButton({
         unoptimized
         className={twMerge(
           className,
-          `object-contain object-right transition-opacity duration-150 ${
+          `object-contain transition-opacity duration-150 ${
             hover ? "opacity-0" : "opacity-100"
           }`
         )}
@@ -47,7 +47,7 @@ export default function HomeButton({
         unoptimized
         className={twMerge(
           className,
-          `object-contain object-right transition-opacity duration-150 ${
+          `object-contain transition-opacity duration-150 ${
             hover ? "opacity-100" : "opacity-0"
           }`
         )}

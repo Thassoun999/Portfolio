@@ -3,9 +3,6 @@ import HomeButton from "@/components/HomeButton";
 
 export default function Home() {
   const filePathLogoGif = "/Media/BackSun1_2025_new_Transparent.gif";
-  // 355 x 261 - for Logo
-
-  // TODO: Redraw all images giving them the same bounding box
 
   const Image1 = [
     "/Media/words1_new_unhover_transparent.gif",
@@ -19,42 +16,42 @@ export default function Home() {
     "/Media/words3_new_unhover_transparent.gif",
     "/Media/words3_new_hover_transparent.gif",
   ];
+
   return (
-    <div>
-      <main>
-        <div className="flex flex-row w-3/4 mt-5 mb-5 mx-auto gap-6">
-          <div
-            id="items-container"
-            className="flex flex-col relative items-end w-4/5"
-          >
-            <HomeButton
-              hrefLink="/about"
-              pathnameUnhover={Image1[0]}
-              pathnameHover={Image1[1]}
-            />
-            <HomeButton
-              hrefLink="/contact"
-              pathnameUnhover={Image2[0]}
-              pathnameHover={Image2[1]}
-            />
-            <HomeButton
-              hrefLink="/work"
-              pathnameUnhover={Image3[0]}
-              pathnameHover={Image3[1]}
-            />
-          </div>
-          <div className="w-full relative aspect-3/2">
-            <Image
-              src={filePathLogoGif}
-              alt="Logo Gif"
-              className="object-contain object-left pb-5"
-              fill
-              unoptimized
-            />
-          </div>
+    <main>
+      <div className="flex flex-col items-center sm:flex-row sm:w-3/4 mt-5 mb-5 mx-auto gap-6">
+        <div
+          id="items-container"
+          className="flex flex-col relative w-80/100 sm:w-4/5"
+        >
+          <HomeButton
+            hrefLink="/about"
+            pathnameUnhover={Image1[0]}
+            pathnameHover={Image1[1]}
+          />
+          <HomeButton
+            hrefLink="/contact"
+            pathnameUnhover={Image2[0]}
+            pathnameHover={Image2[1]}
+          />
+          <HomeButton
+            hrefLink="/work"
+            pathnameUnhover={Image3[0]}
+            pathnameHover={Image3[1]}
+            className="ml-4 sm:ml-0"
+          />
         </div>
-      </main>
-    </div>
+        <div className="w-full relative aspect-3/2 sm:aspect-21/20">
+          <Image
+            src={filePathLogoGif}
+            alt="Logo Gif"
+            className="object-contain sm:object-left pb-5"
+            fill
+            unoptimized
+          />
+        </div>
+      </div>
+    </main>
   );
 }
 
