@@ -22,16 +22,16 @@ export default function Navbar() {
   }, []);
 
   const Image1 = [
-    "/Media/words1_new_unhover_transparent.gif",
-    "/Media/words1_new_hover_transparent.gif",
+    "/Media/Assets/words1_new_unhover_transparent.gif",
+    "/Media/Assets/words1_new_hover_transparent.gif",
   ];
   const Image2 = [
-    "/Media/words2_new_unhover_transparent.gif",
-    "/Media/Words2_new_hover_transparent.gif",
+    "/Media/Assets/words2_new_unhover_transparent.gif",
+    "/Media/Assets/Words2_new_hover_transparent.gif",
   ];
   const Image3 = [
-    "/Media/words3_new_unhover_transparent.gif",
-    "/Media/words3_new_hover_transparent.gif",
+    "/Media/Assets/words3_new_unhover_transparent.gif",
+    "/Media/Assets/words3_new_hover_transparent.gif",
   ];
 
   return (

@@ -2,19 +2,19 @@ import Image from "next/image";
 import HomeButton from "@/components/HomeButton";
 
 export default function Home() {
-  const filePathLogoGif = "/Media/BackSun1_2025_new_Transparent.gif";
+  const filePathLogoGif = "/Media/Assets/BackSun1_2025_new_Transparent.gif";
 
   const Image1 = [
-    "/Media/words1_new_unhover_transparent.gif",
-    "/Media/words1_new_hover_transparent.gif",
+    "/Media/Assets/words1_new_unhover_transparent.gif",
+    "/Media/Assets/words1_new_hover_transparent.gif",
   ];
   const Image2 = [
-    "/Media/words2_new_unhover_transparent.gif",
-    "/Media/Words2_new_hover_transparent.gif",
+    "/Media/Assets/words2_new_unhover_transparent.gif",
+    "/Media/Assets/Words2_new_hover_transparent.gif",
   ];
   const Image3 = [
-    "/Media/words3_new_unhover_transparent.gif",
-    "/Media/words3_new_hover_transparent.gif",
+    "/Media/Assets/words3_new_unhover_transparent.gif",
+    "/Media/Assets/words3_new_hover_transparent.gif",
   ];
 
   return (

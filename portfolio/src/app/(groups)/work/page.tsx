@@ -2,18 +2,18 @@ import HomeButton from "@/components/HomeButton";
 
 export default function Work() {
   const Image1 = [
-    "/Media/WebsiteWork_unhover_transparent.gif",
-    "/Media/WebsiteWork_hover_transparent.gif",
+    "/Media/Assets/WebsiteWork_unhover_transparent.gif",
+    "/Media/Assets/WebsiteWork_hover_transparent.gif",
   ];
 
   const Image2 = [
-    "/Media/GameWork_unhover_transparent.gif",
-    "/Media/GameWork_hover_transparent.gif",
+    "/Media/Assets/GameWork_unhover_transparent.gif",
+    "/Media/Assets/GameWork_hover_transparent.gif",
   ];
 
   const Image3 = [
-    "/Media/3DWork_Unhover_transparent.gif",
-    "/Media/3DWork_hover_transparent.gif",
+    "/Media/Assets/3DWork_Unhover_transparent.gif",
+    "/Media/Assets/3DWork_hover_transparent.gif",
   ];
 
   return (
