@@ -28,17 +28,19 @@ export default function Home() {
             hrefLink="/about"
             pathnameUnhover={Image1[0]}
             pathnameHover={Image1[1]}
+            className="aspect-6/1 sm:aspect-3/1"
           />
           <HomeButton
             hrefLink="/contact"
             pathnameUnhover={Image2[0]}
             pathnameHover={Image2[1]}
+            className="aspect-6/1 sm:aspect-3/1"
           />
           <HomeButton
             hrefLink="/work"
             pathnameUnhover={Image3[0]}
             pathnameHover={Image3[1]}
-            className="ml-4 sm:ml-0"
+            className="aspect-6/1 sm:aspect-3/1 ml-4 sm:ml-0"
           />
         </div>
         <div className="w-full relative aspect-3/2 sm:aspect-21/20">

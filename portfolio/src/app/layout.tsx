@@ -26,7 +26,7 @@ export default function RootLayout({
       <body
         className={`${Chalkboard200Regular.className} bg-no-repeat bg-full-size bg-[url(/Media/stars_back1.jpg)] min-h-screen w-full`}
       >
-        <header className="relative mt-5 mb-1 w-90/100 aspect-3/1 sm:w-3/4 mx-auto">
+        <header className="relative mt-5 mb-1 w-90/100 aspect-4/1 sm:w-3/4 mx-auto">
           <Link href="/" id="banner">
             <Image
               src={bannerImage}

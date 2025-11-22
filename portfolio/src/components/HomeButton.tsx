@@ -26,31 +26,25 @@ export default function HomeButton({
       key={`Image-${hover}`}
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
-      className="relative aspect-5/1 sm:aspect-3/1"
+      className={twMerge(className, "relative")}
     >
       <Image
         src={pathnameUnhover}
         alt="HomeButtonImage"
         fill
         unoptimized
-        className={twMerge(
-          className,
-          `object-contain transition-opacity duration-150 ${
-            hover ? "opacity-0" : "opacity-100"
-          }`
-        )}
+        className={`object-contain transition-opacity duration-150 ${
+          hover ? "opacity-0" : "opacity-100"
+        }`}
       />
       <Image
         src={pathnameHover}
         alt="HomeButtonImage"
         fill
         unoptimized
-        className={twMerge(
-          className,
-          `object-contain transition-opacity duration-150 ${
-            hover ? "opacity-100" : "opacity-0"
-          }`
-        )}
+        className={`object-contain transition-opacity duration-150 ${
+          hover ? "opacity-100" : "opacity-0"
+        }`}
       />
     </Link>
   );

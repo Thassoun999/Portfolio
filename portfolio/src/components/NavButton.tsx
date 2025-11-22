@@ -12,7 +12,7 @@ export type NavButtonProps = {
   className?: string;
 };
 
-export default function NavButtonProps({
+export default function NavButton({
   pathnameHover,
   pathnameUnhover,
   hrefLink,
@@ -26,19 +26,16 @@ export default function NavButtonProps({
       key={`Image-${hover}`}
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
-      className="relative w-full aspect-3/1"
+      className={twMerge(className, "relative w-full")}
     >
       <Image
         src={pathnameUnhover}
         alt="NavButtonImage"
         fill
         unoptimized
-        className={twMerge(
-          className,
-          `object-contain items-center transition-opacity duration-150 ${
-            hover ? "opacity-0" : "opacity-100"
-          }`
-        )}
+        className={`object-contain transition-opacity duration-150 ${
+          hover ? "opacity-0" : "opacity-100"
+        }`}
       />
 
       <Image
@@ -46,12 +43,9 @@ export default function NavButtonProps({
         alt="NavButtonImage"
         fill
         unoptimized
-        className={twMerge(
-          className,
-          `object-contain items-center transition-opacity duration-150 ${
-            hover ? "opacity-100" : "opacity-0"
-          }`
-        )}
+        className={`object-contain transition-opacity duration-150 ${
+          hover ? "opacity-100" : "opacity-0"
+        }`}
       />
     </Link>
   );
