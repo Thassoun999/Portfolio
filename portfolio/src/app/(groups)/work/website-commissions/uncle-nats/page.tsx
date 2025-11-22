@@ -43,4 +43,4 @@ export default function UncleNats() {
   );
 }
 
-// flex justify end for another image
+// flex justify end for another imageg
