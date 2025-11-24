@@ -24,11 +24,11 @@ function Stars({ position, args, mousePos = undefined }: StarProps) {
     if (ref && ref.current) {
       if (mousePos) {
         // Rotates star map
-        //ref.current.rotation.x = mousePos.y * 0.00005;
-        //ref.current.rotation.y = mousePos.x * 0.00005;
+        ref.current.rotation.x += delta * 0.01;
+        ref.current.rotation.y -= delta * 0.01;
 
         // Shifts landscape position of each point
-        ref.current.position.y = mousePos.y * 0.0001;
+        ref.current.position.y = mousePos.y * 0.00015;
         ref.current.position.x = mousePos.x * -0.0001;
       }
     }
