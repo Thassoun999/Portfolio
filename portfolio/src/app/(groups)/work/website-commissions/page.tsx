@@ -8,7 +8,9 @@ export default function WebsiteCommissions() {
           <Link href={"./website-commissions/uncle-nats"}>1. Uncle Nat's</Link>
         </li>
         <li className="text-white hover:text-red-400">
-          2. The Los Angeles Design Group
+          <Link href={"./website-commissions/ladg"}>
+            2. The Los Angeles Design Group
+          </Link>
         </li>
         <li className="text-white hover:text-red-400">3. LTP</li>
       </ul>
