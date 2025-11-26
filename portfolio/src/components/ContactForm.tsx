@@ -3,12 +3,6 @@
 import { useState } from "react";
 // TS first validation library
 import { z } from "zod";
-import {
-  loadCaptchaEnginge,
-  LoadCanvasTemplate,
-  LoadCanvasTemplateNoReload,
-  validateCaptcha,
-} from "react-simple-captcha";
 
 //backwardssunrisestudios@gmail.com
 const contactFormSchema = z.object({
