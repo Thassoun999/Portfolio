@@ -33,7 +33,7 @@ export default function NavButton({
         alt="NavButtonImage"
         fill
         unoptimized
-        className={`object-contain transition-opacity duration-150 ${
+        className={`object-contain transition-opacity duration-50 ${
           hover ? "opacity-0" : "opacity-100"
         }`}
       />
@@ -43,7 +43,7 @@ export default function NavButton({
         alt="NavButtonImage"
         fill
         unoptimized
-        className={`object-contain transition-opacity duration-150 ${
+        className={`object-contain transition-opacity duration-50 ${
           hover ? "opacity-100" : "opacity-0"
         }`}
       />
