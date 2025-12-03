@@ -24,7 +24,6 @@ export default function UncleNats() {
           Uncle Nat's is a hair removal and facial lounge located in Flatbush,
           the Little Caribbean neighborhood in Brooklyn.
         </p>
-
         <br />
         <h2 className="text-3xl md:text-5xl xl:text-6xl">
           Interactive Hero Banner

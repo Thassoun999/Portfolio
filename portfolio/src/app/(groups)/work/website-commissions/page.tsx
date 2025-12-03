@@ -12,7 +12,9 @@ export default function WebsiteCommissions() {
             2. The Los Angeles Design Group
           </Link>
         </li>
-        <li className="text-white hover:text-red-400">3. LTP</li>
+        <Link href={"./website-commissions/ltp"}>
+          <li className="text-white hover:text-red-400">3. LTP</li>
+        </Link>
       </ul>
     </div>
   );

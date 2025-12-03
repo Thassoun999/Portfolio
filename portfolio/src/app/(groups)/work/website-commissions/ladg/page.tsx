@@ -41,8 +41,14 @@ export default function LADG() {
           co-principals Claus Benjamin Freyinger and Andrew Holder, the firm has
           offices in Venice, CA.
         </p>
-
         <br />
+        <h2 className="text-3xl md:text-5xl xl:text-6xl">
+          Site Wide Design and Development
+        </h2>
+        <p className="text-2xl md:text-4xl xl:text-5xl">
+          Designed and developed the current iteration of the LADG website and
+          media presentations.
+        </p>
       </div>
       <div className="w-full sm:w-1/2 sm:py-2">
         <Carousel loop>

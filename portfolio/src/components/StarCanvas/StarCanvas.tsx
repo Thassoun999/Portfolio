@@ -72,8 +72,6 @@ function Scene() {
     setMousePos({ x: e.clientX, y: e.clientY });
   });
 
-  console.log(mousePos);
-
   // Shows a helper, in this case, it will show a square stating where the light starts and a line point the direction to our object!
   // useHelper(directionalLightRef, THREE.DirectionalLightHelper);
 
