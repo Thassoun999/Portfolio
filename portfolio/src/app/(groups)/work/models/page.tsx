@@ -7,6 +7,12 @@ export default function Models() {
         <li className="text-white hover:text-red-400">
           <Link href={"./models/saturn-lav"}>1. Saturn Lavender</Link>
         </li>
+        <li className="text-white hover:text-red-400">
+          <Link href={"./models/ar-capstone"}>2. AR Capstone</Link>
+        </li>
+        <li className="text-white hover:text-red-400">
+          <Link href={"./models/vr-capstone"}>3. VR Capstone</Link>
+        </li>
       </ul>
     </div>
   );

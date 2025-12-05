@@ -13,7 +13,7 @@ export default function LTP() {
       altText: "LTP About",
     },
     {
-      src: "/Media/Portfolio/LTP3_3.png",
+      src: "/Media/Portfolio/LTP_3.png",
       altText: "LTP Support",
     },
   ];
@@ -40,7 +40,7 @@ export default function LTP() {
         <p className="text-2xl md:text-4xl xl:text-5xl">
           LTP is an online educational channel that strives to foster a culture
           of liberation by educating audiences to navigate historical and
-          contemporary issues.
+          contemporary Palestinian issues.
         </p>
         <br />
         <h2 className="text-3xl md:text-5xl xl:text-6xl">

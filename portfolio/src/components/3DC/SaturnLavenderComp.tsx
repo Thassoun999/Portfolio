@@ -3,7 +3,6 @@
 import {
   Center,
   Circle,
-  Gltf,
   Html,
   OrbitControls,
   Stats,
@@ -53,7 +52,7 @@ function Scene({ pathname }: { pathname: string }) {
         />
       </Center>
 
-      <OrbitControls target={[0, 0, 0]} />
+      <OrbitControls enableZoom={false} enablePan={false} target={[0, 0, 0]} />
     </>
   );
 }
