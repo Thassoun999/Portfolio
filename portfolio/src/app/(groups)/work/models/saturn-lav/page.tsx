@@ -62,11 +62,11 @@ export default function SaturnLavender() {
         />
       </div>
       <div className="flex flex-col sm:flex-row sm:gap-5 mx-2 justify-center my-2">
-        <video className="w-auto h-80 sm:h-120" controls>
+        <video className="w-auto h-80 sm:h-100" controls>
           <source src="/Media/Videos/IMG_7260.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <video className="w-auto h-80 sm:h-120" controls>
+        <video className="w-auto h-80 sm:h-100" controls>
           <source src="/Media/Videos/IMG_7266.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>

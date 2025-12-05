@@ -80,7 +80,7 @@ export default function VRCapstone() {
           <p className="text-2xl md:text-4xl xl:text-5xl">
             Animation Demo Of Different Models
           </p>
-          <video className="w-auto h-80 sm:h-120" controls>
+          <video className="w-auto h-80 sm:h-100" controls>
             <source src="/Media/Videos/AnimationDemo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
