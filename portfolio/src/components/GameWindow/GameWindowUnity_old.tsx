@@ -10,6 +10,8 @@ export type GameWindowsUnityOldProps = {
   className?: string;
 };
 
+// TODO: For the future, ensure that the aspect ratio can be modified, everything else can stay
+
 export default function GameWindowUnityOld({
   configUrl,
   gameLoader,
