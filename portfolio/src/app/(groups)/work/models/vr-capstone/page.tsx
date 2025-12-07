@@ -62,6 +62,7 @@ export default function VRCapstone() {
         <ARComp
           camPos={[-7, 2, -7]}
           pathname={crane}
+          key="crane"
           className="w-full h-60 sm:h-180"
         />
       </div>

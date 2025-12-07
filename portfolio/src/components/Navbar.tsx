@@ -49,7 +49,7 @@ export default function Navbar() {
             }`}
           >
             <NavButton
-              hrefLink="about"
+              hrefLink="/about"
               pathnameUnhover={Image1[0]}
               pathnameHover={Image1[1]}
               className="mt-0.5 sm:mt-1 aspect-7/2 sm:aspect-6/1"

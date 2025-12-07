@@ -13,6 +13,7 @@ export type HomeButtonProps = {
 };
 
 // TODO: SEE HERE
+// #e5d8cd for colorblind background
 // MEOW: https://www.reddit.com/r/nextjs/comments/15aj1t0/undesirable_image_flickering_in_nextjs/
 
 export default function HomeButton({

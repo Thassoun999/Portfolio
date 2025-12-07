@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Script from "next/script";
 import { twMerge } from "tailwind-merge";
 
 export type GameWindowsUnityOldProps = {
@@ -10,28 +9,87 @@ export type GameWindowsUnityOldProps = {
   className?: string;
 };
 
-// TODO: For the future, ensure that the aspect ratio can be modified, everything else can stay
-
 export default function GameWindowUnityOld({
   configUrl,
   gameLoader,
   className,
 }: GameWindowsUnityOldProps) {
   const [fullscreen, setFullscreen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const unityInstanceRef = useRef<any>(null);
 
-  // Initialize Unity
   useEffect(() => {
+    if (!containerRef.current) return;
+
+    let didInit = false;
+
     const initUnity = () => {
+      if (didInit) return; // Prevent multiple inits
+      didInit = true;
+
       if (typeof window !== "undefined" && (window as any).UnityLoader) {
-        (window as any).UnityLoader.instantiate("unity-container", configUrl);
+        unityInstanceRef.current = (window as any).UnityLoader.instantiate(
+          containerRef.current,
+          configUrl
+        );
       }
     };
 
-    window.addEventListener("unity-loader-ready", initUnity);
-    return () => window.removeEventListener("unity-loader-ready", initUnity);
-  }, [configUrl]);
+    // Check if script is already on the page
+    let script = document.querySelector<HTMLScriptElement>(
+      `script[src="${gameLoader}"]`
+    );
+    let createdScript = false;
 
-  // Handle fullscreen toggle
+    if (!script) {
+      script = document.createElement("script");
+      script.src = gameLoader;
+      script.async = true;
+      document.body.appendChild(script);
+      createdScript = true;
+    }
+
+    if ((window as any).UnityLoader) {
+      initUnity();
+    } else if (createdScript && script) {
+      script.addEventListener("load", initUnity);
+    }
+
+    return () => {
+      // Remove listener
+      if (script && createdScript) {
+        script.removeEventListener("load", initUnity);
+      }
+
+      // Clean container
+      if (containerRef.current) {
+        while (containerRef.current.firstChild) {
+          containerRef.current.removeChild(containerRef.current.firstChild);
+        }
+      }
+
+      // Quit instance
+      if (unityInstanceRef.current) {
+        try {
+          unityInstanceRef.current.Quit && unityInstanceRef.current.Quit();
+        } catch {}
+        unityInstanceRef.current = null;
+      }
+
+      // Remove script if we created it
+      if (script && createdScript && script.parentElement) {
+        script.parentElement.removeChild(script);
+      }
+
+      // Delete global loader
+      if ((window as any).UnityLoader) {
+        try {
+          delete (window as any).UnityLoader;
+        } catch {}
+      }
+    };
+  }, [configUrl, gameLoader]);
+
   const handleFullscreen = () => {
     setFullscreen(!fullscreen);
   };
@@ -52,21 +110,15 @@ export default function GameWindowUnityOld({
           "mx-auto object-contain border-2 rounded-sm"
         )}
       >
-        {/* Unity loader script */}
-        <Script
-          src={gameLoader}
-          strategy="afterInteractive"
-          onLoad={() => window.dispatchEvent(new Event("unity-loader-ready"))}
-        />
-
         {/* Unity container */}
         <div
           id="unity-container"
+          ref={containerRef}
           className="relative w-full aspect-3/5 bg-black overflow-hidden object-contain"
         />
         {/* Fullscreen button */}
         <div
-          className="absolute bottom-2 right-2 h-10 w-20/100 sm:w-12/100 bg-purple-500 hover:bg-purple-600 opacity-70 border-2 rounded-4xl cursor-pointer text-center flex items-center justify-center"
+          className="absolute bottom-2 left-2 h-10 w-20/100 sm:w-12/100 bg-purple-500 hover:bg-purple-600 opacity-70 border-2 rounded-4xl cursor-pointer text-center flex items-center justify-center"
           onClick={handleFullscreen}
         >
           <b className="pt-0.5">⛶</b>

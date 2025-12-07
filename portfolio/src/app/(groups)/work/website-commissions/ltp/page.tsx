@@ -19,7 +19,7 @@ export default function LTP() {
   ];
 
   return (
-    <div className="my-5 mx-10 sm:mx-20 flex flex-col sm:flex-row justify-between sm:gap-5 items-center">
+    <div className="my-5 mx-10 sm:mx-20 flex flex-col sm:flex-row justify-between sm:gap-10 items-start">
       <div className="space-y-2 sm:space-y-4 text-white w-full sm:w-1/2 mb-2">
         <Image
           src={"/Media/Assets/object_saturn.gif"}
@@ -53,7 +53,7 @@ export default function LTP() {
           I am still engaged in maintenance and adding new web features.
         </p>
       </div>
-      <div className="w-full sm:w-1/2 sm:py-2">
+      <div className="w-full sm:w-1/2 sm:pt-15 ">
         <Carousel loop>
           {imageItems.map((item, i) => {
             return (

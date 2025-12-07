@@ -13,6 +13,9 @@ export default function Models() {
         <li className="text-white hover:text-red-400">
           <Link href={"./models/vr-capstone"}>3. VR Capstone</Link>
         </li>
+        <li className="text-white hover:text-red-400">
+          <Link href={"./models/donut"}>4. Blender Donut</Link>
+        </li>
       </ul>
     </div>
   );

@@ -49,11 +49,13 @@ export default function ARCapstone() {
         <ARComp
           camPos={[-3, 2, -2]}
           pathname={redPlane}
+          key="red"
           className="w-full h-60 sm:h-180"
         />
         <ARComp
           camPos={[-3, 2, -3]}
           pathname={blackPlane}
+          key="black"
           className="w-full h-60 sm:h-180"
         />
       </div>

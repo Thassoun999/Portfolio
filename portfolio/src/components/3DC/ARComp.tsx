@@ -17,6 +17,8 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 export type ARProps = {
   pathname: string;
   camPos: any;
+  key: string;
+  scale?: number[];
   className?: string;
 };
 
@@ -26,7 +28,7 @@ function Loader() {
   return <Html center>{progress} % loaded</Html>;
 }
 
-function Scene({ pathname }: { pathname: string }) {
+function Scene({ pathname, scale }: { pathname: string; scale: number[] }) {
   const directionalLightRef = useRef<any>(null);
 
   const gltf = useLoader(GLTFLoader, pathname);
@@ -38,6 +40,10 @@ function Scene({ pathname }: { pathname: string }) {
   const ref = useRef<THREE.Mesh>(null);
 
   useEffect(() => {
+    console.log("Model mounted:", pathname);
+  }, [pathname]);
+
+  useEffect(() => {
     if (names.length > 0) {
       const action = actions[names[0]];
       if (action) {
@@ -46,7 +52,7 @@ function Scene({ pathname }: { pathname: string }) {
       }
     }
   }, [actions, names]);
-  gltf.scene.scale.set(1, 1, 1);
+  gltf.scene.scale.set(scale[0], scale[1], scale[2]);
 
   console.log();
   return (
@@ -75,12 +81,18 @@ function Scene({ pathname }: { pathname: string }) {
   );
 }
 
-export default function ARComp({ pathname, className, camPos }: ARProps) {
+export default function ARComp({
+  pathname,
+  className = "",
+  scale = [1, 1, 1],
+  camPos,
+  key,
+}: ARProps) {
   return (
-    <div className={className}>
+    <div className={className} key={key}>
       <Canvas camera={{ position: camPos }} shadows>
         <Suspense fallback={<Loader />}>
-          <Scene pathname={pathname} />
+          <Scene pathname={pathname} scale={scale} />
         </Suspense>
       </Canvas>
     </div>
