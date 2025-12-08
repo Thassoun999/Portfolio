@@ -3,9 +3,6 @@ import Image from "next/image";
 // TODO: For the future, ensure that the aspect ratio can be modified, everything else can stay
 
 export default function WanderingIceBreaker() {
-  const gameLoader = "/Executables/WanderingIceBreaker/Build/UnityLoader.js";
-  const configUrl = "/Executables/WanderingIceBreaker/Build/Downloads.json";
-
   /*
   For newer unity versions
   const dataUrl =

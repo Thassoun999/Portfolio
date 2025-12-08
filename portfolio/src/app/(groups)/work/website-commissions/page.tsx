@@ -5,7 +5,9 @@ export default function WebsiteCommissions() {
     <div className="my-5 mx-10 sm:mx-20">
       <ul className="space-y-4 text-4xl md:text-6xl xl:text-7xl">
         <li className="text-white hover:text-red-400">
-          <Link href={"./website-commissions/uncle-nats"}>1. Uncle Nat's</Link>
+          <Link href={"./website-commissions/uncle-nats"}>
+            {"1. Uncle Nat's"}
+          </Link>
         </li>
         <li className="text-white hover:text-red-400">
           <Link href={"./website-commissions/ladg"}>

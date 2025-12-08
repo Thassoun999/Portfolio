@@ -1,3 +1,4 @@
+/*
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -68,7 +69,6 @@ function Sphere(props: GeoProps) {
       scale={isClicked ? 2 : 1}
     >
       <sphereGeometry args={args || undefined} />
-      {/*<meshStandardMaterial color={isHovered ? "hotpink" : color} wireframe />*/}
       <MeshDistortMaterial
         color={isHovered ? "hotpink" : color}
         factor={5}
@@ -130,9 +130,8 @@ function Scene() {
       />
       <ambientLight intensity={0.1} />
 
-      {/* Important for renders that need time to execute */}
       <Suspense fallback={null}>
-        {/* <Cube position={[0, 0, 0]} size={[1, 1, 1]} color={"orange"} />
+        <Cube position={[0, 0, 0]} size={[1, 1, 1]} color={"orange"} />
             <Sphere position={[0, 0, 0]} args={[1, 30, 30]} color={"purple"}  />
                       <Torus
             position={[2, 0, 0]}
@@ -145,13 +144,12 @@ function Scene() {
             args={[0.5, 0.1, 1000, 50]}
             color={"hotpink"}
           />
-        */}
+        *
         <Sphere position={[0, 0, 0]} args={[1, 30, 30]} color={"purple"} />
       </Suspense>
 
       <OrbitControls enableZoom={false} />
 
-      {/* Add 3D objects here */}
     </>
   );
 }
@@ -172,3 +170,4 @@ export default function StarCanvas_Teaching() {
 // meshes and geometry can be grouped
 
 // useFrame is a hook that allows you to execute code on every rendered frame, like running effects, updating controls, and so on
+*/

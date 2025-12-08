@@ -15,23 +15,24 @@ export default function UncleNats() {
         />
         <Link href={"https://www.unclenats.com/"}>
           <h1 className="text-4xl md:text-6xl xl:text-7xl hover:text-red-400">
-            Uncle Nat's
+            {"Uncle Nat's"}
           </h1>
         </Link>
         <br />
         <h2 className="text-3xl md:text-5xl xl:text-6xl">Description</h2>
         <p className="text-2xl md:text-4xl xl:text-5xl">
-          Uncle Nat's is a hair removal and facial lounge located in Flatbush,
-          the Little Caribbean neighborhood in Brooklyn.
+          {
+            "Uncle Nat's is a hair removal and facial lounge located in Flatbush, the Little Caribbean neighborhood in Brooklyn."
+          }
         </p>
         <br />
         <h2 className="text-3xl md:text-5xl xl:text-6xl">
           Interactive Hero Banner
         </h2>
         <p className="text-2xl md:text-4xl xl:text-5xl">
-          This interactive hero banner utilizes WebGL rendering and imaging
-          flowmaps to create an interactive taffy-like logo. When clicked the
-          logo goes semi-transparent revealing the team behind Uncle Nat's.
+          {
+            "This interactive hero banner utilizes WebGL rendering and imaging flowmaps to create an interactive taffy-like logo. When clicked the logo goes semi-transparent revealing the team behind Uncle Nat's."
+          }
         </p>
       </div>
       <video className="w-full sm:w-1/2 sm:pt-30" controls>

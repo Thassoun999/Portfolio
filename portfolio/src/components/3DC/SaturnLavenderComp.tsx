@@ -1,16 +1,8 @@
 "use client";
 
-import {
-  Center,
-  Circle,
-  Html,
-  OrbitControls,
-  Stats,
-  useProgress,
-} from "@react-three/drei";
+import { Center, Html, OrbitControls, useProgress } from "@react-three/drei";
 import { Canvas, useLoader } from "@react-three/fiber";
-import { Suspense, useRef } from "react";
-import * as THREE from "three";
+import { Suspense } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 export type SaturnLavenderProps = {
@@ -25,7 +17,7 @@ function Loader() {
 }
 
 function Scene({ pathname }: { pathname: string }) {
-  const directionalLightRef = useRef<any>(null);
+  // const directionalLightRef = useRef<any>(null);
 
   const gltf = useLoader(GLTFLoader, pathname);
   console.log("Loaded GLB:", gltf);
@@ -34,11 +26,7 @@ function Scene({ pathname }: { pathname: string }) {
   gltf.scene.scale.set(20, 20, 20);
   return (
     <>
-      <directionalLight
-        position={[0, 0, 2]}
-        intensity={0.5}
-        ref={directionalLightRef}
-      />
+      <directionalLight position={[0, 0, 2]} intensity={0.5} />
 
       <ambientLight intensity={1} />
 

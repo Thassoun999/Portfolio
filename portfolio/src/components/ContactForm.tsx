@@ -36,6 +36,7 @@ export default function ContactForm() {
     try {
       contactFormSchema.parse(values);
       // await sendContactMessage in an actions server side thing
+      setSuccessMessage("Yay");
     } catch (err) {
       throw new Error(`Contact Form Error: ${err}`);
     }

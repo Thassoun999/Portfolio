@@ -1,14 +1,22 @@
 "use client";
-import { useHelper } from "@react-three/drei";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { useRef, useEffect, Suspense, useState, useMemo } from "react";
-import { twMerge } from "tailwind-merge";
+import { useRef, Suspense, useState, useMemo } from "react";
 
 import * as THREE from "three";
 
 type StarProps = {
-  position: any;
-  args?: any;
+  position: [x: number, y: number, z: number];
+  args:
+    | [
+        array: THREE.TypedArray,
+        itemSize: number,
+        normalized?: boolean | undefined
+      ]
+    | readonly [
+        array: THREE.TypedArray,
+        itemSize: number,
+        normalized?: boolean | undefined
+      ];
   mousePos?: { x: number; y: number };
 };
 
@@ -18,7 +26,7 @@ export type StarCanvasProps = {
 
 function Stars({ position, args, mousePos = undefined }: StarProps) {
   // React hook that lets you reference a value that's not needed for rendering.
-  const ref = useRef<any>(null);
+  const ref = useRef<THREE.Points>(null);
 
   useFrame((state, delta) => {
     if (ref && ref.current) {
@@ -64,7 +72,7 @@ function Stars({ position, args, mousePos = undefined }: StarProps) {
 }
 
 function Scene() {
-  const directionalLightRef = useRef<any>(null);
+  // const directionalLightRef = useRef<any>(null);
 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -88,12 +96,7 @@ function Scene() {
   // old star color 0x44aa88
   return (
     <group>
-      <directionalLight
-        ref={directionalLightRef}
-        position={[-1, 2, 4]}
-        color={"white"}
-        intensity={1}
-      />
+      <directionalLight position={[-1, 2, 4]} color={"white"} intensity={1} />
       <Suspense fallback={null}>
         <Stars
           args={[particlePositions, 3]}

@@ -60,21 +60,21 @@ export default function BittersweetReturn() {
             className="w-full mb-4"
           />
           <Image
-            src={"/Media/Portfolio/BSR/Capture1.png"}
+            src={"/Media/Portfolio/BSR/Capture1.PNG"}
             alt="Screen1"
             width={1019}
             height={754}
             className="w-full mb-4"
           />
           <Image
-            src={"/Media/Portfolio/BSR/Capture4.png"}
+            src={"/Media/Portfolio/BSR/Capture4.PNG"}
             alt="Screen2"
             width={1018}
             height={745}
             className="w-full mb-4"
           />
           <Image
-            src={"/Media/Portfolio/BSR/Capture6.png"}
+            src={"/Media/Portfolio/BSR/Capture6.PNG"}
             alt="Screen3"
             width={1021}
             height={761}

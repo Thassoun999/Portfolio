@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import localFont from "next/font/local";
 import "@/styles/globals.css";
 import Link from "next/link";
 import StarCanvas from "@/components/StarCanvas/StarCanvas";
 
-export const Chalkboard200Regular = localFont({
-  src: "../fonts/Chalkboard200Regular.ttf",
-});
+import { Chalkboard200Regular } from "@/lib/fonts";
+import { bannerImage } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Backwards Sunrise",
@@ -15,7 +13,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Sydra (Tae) Hassoun" }],
 };
 // opacity-1 transition-opacity duration-1500 ease-out
-export const bannerImage = "/Media/Assets/LogoTitleCombine.gif";
 
 export default function RootLayout({
   children,

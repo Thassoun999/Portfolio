@@ -1,3 +1,4 @@
+/*
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -110,13 +111,11 @@ export default function GameWindowUnityOld({
           "mx-auto object-contain border-2 rounded-sm"
         )}
       >
-        {/* Unity container */}
         <div
           id="unity-container"
           ref={containerRef}
           className="relative w-full aspect-3/5 bg-black overflow-hidden object-contain"
         />
-        {/* Fullscreen button */}
         <div
           className="absolute bottom-2 left-2 h-10 w-20/100 sm:w-12/100 bg-purple-500 hover:bg-purple-600 opacity-70 border-2 rounded-4xl cursor-pointer text-center flex items-center justify-center"
           onClick={handleFullscreen}
@@ -127,3 +126,4 @@ export default function GameWindowUnityOld({
     </div>
   );
 }
+*/

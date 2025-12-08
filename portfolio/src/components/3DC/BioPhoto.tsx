@@ -13,7 +13,7 @@ export type BioPhotoProps = {
 };
 
 function Scene({ scale }: { scale: number[] }) {
-  const directionalLightRef = useRef<any>(null);
+  // const directionalLightRef = useRef<any>(null);
   const meshRef = useRef<THREE.Mesh>(null);
   const texture = useTexture("/Media/About/BioPhoto_1.jpg");
 
@@ -88,11 +88,7 @@ function Scene({ scale }: { scale: number[] }) {
 
   return (
     <>
-      <directionalLight
-        position={[0, 0, 2]}
-        intensity={0.5}
-        ref={directionalLightRef}
-      />
+      <directionalLight position={[0, 0, 2]} intensity={0.5} />
 
       <ambientLight intensity={1.5} />
       <Center>

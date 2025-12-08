@@ -11,7 +11,7 @@ type CarouselProps = PropsWithChildren & EmblaOptionsType;
 export default function Carousel({ children, ...options }: CarouselProps) {
   // 1. useEmblaCarousel returns a emblaRef and we must attach the ref to a container.
   // EmblaCarousel will use that ref as basis for swipe and other functionality.
-  const [emblaRef, emblaAPI] = useEmblaCarousel(options, [
+  const [emblaRef] = useEmblaCarousel(options, [
     Autoplay({ playOnInit: true, delay: 3000 }),
   ]);
 

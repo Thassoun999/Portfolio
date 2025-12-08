@@ -2,10 +2,8 @@
 
 import {
   Center,
-  Circle,
   Html,
   OrbitControls,
-  Stats,
   useAnimations,
   useProgress,
 } from "@react-three/drei";
@@ -16,7 +14,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 export type ARProps = {
   pathname: string;
-  camPos: any;
+  camPos: [x: number, y: number, z: number];
   key: string;
   scale?: number[];
   className?: string;
@@ -29,7 +27,7 @@ export function Loader() {
 }
 
 function Scene({ pathname, scale }: { pathname: string; scale: number[] }) {
-  const directionalLightRef = useRef<any>(null);
+  // const directionalLightRef = useRef<any>(null);
 
   const gltf = useLoader(GLTFLoader, pathname);
   console.log("Loaded GLB:", gltf);
@@ -57,11 +55,7 @@ function Scene({ pathname, scale }: { pathname: string; scale: number[] }) {
   console.log();
   return (
     <>
-      <directionalLight
-        position={[0, 0, 2]}
-        intensity={0.5}
-        ref={directionalLightRef}
-      />
+      <directionalLight position={[0, 0, 2]} intensity={0.5} />
 
       <ambientLight intensity={1.5} />
 

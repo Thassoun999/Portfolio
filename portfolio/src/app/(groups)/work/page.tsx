@@ -7,7 +7,7 @@ export default function Work() {
   ];
 
   const Image2 = [
-    "/Media/Assets/GameWork_unhover_transparent.gif",
+    "/Media/Assets/GameWork_Unhover_transparent.gif",
     "/Media/Assets/GameWork_hover_transparent.gif",
   ];
 

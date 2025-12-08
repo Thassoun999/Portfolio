@@ -1,3 +1,4 @@
+/*
 "use client";
 
 import { useRef, useEffect } from "react";
@@ -39,3 +40,4 @@ export default function GameWindowGMS2({
     </div>
   );
 }
+*/

@@ -27,7 +27,7 @@ export default function Navbar() {
   ];
   const Image2 = [
     "/Media/Assets/words2_new_unhover_transparent.gif",
-    "/Media/Assets/Words2_new_hover_transparent.gif",
+    "/Media/Assets/words2_new_hover_transparent.gif",
   ];
   const Image3 = [
     "/Media/Assets/words3_new_unhover_transparent.gif",
