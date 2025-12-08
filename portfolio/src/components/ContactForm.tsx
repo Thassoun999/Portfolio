@@ -35,64 +35,81 @@ export default function ContactForm() {
 
     try {
       contactFormSchema.parse(values);
-      // await sendContactMessage in an actions server side thing
-      setSuccessMessage("Yay");
     } catch (err) {
       throw new Error(`Contact Form Error: ${err}`);
+    }
+
+    formData.append("access_key", "4089fd0c-84aa-4882-8ae0-98e7eeac2318");
+
+    // next we send the email
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+      setSuccessMessage(data.success ? "Success!" : "Error");
+      setLoading(false);
+      (document.getElementById("contact-form1") as HTMLFormElement).reset();
+    } catch (err) {
+      throw new Error(`Email Sending Error: ${err}`);
     }
   };
 
   return (
     <form
+      id="contact-form1"
       onSubmit={handleSubmit}
-      className=" border-2 border-purple-500 rounded-md bg-white flex flex-col gap-4 w-1/2 p-8 items-start"
+      className="text-white p-8 w-full"
     >
       <label className="flex flex-col w-full">
-        <span className="p-1">Name</span>
+        <span className="p-1 text-xl">Name</span>
         <input
           type="text"
           name="name"
           required
-          className="p-4 border-black border-2 text-2xl w-full"
+          className="p-4 font-serif border-2 border-transparent border-b-white hover:border-white focus:border-white  text-xl w-full h-1/2"
         />
       </label>
-      <label className="flex flex-col w-full">
-        <span className="p-1">Email</span>
-        <input
-          type="email"
-          name="email"
-          required
-          className="p-4 border-black border-2 text-2xl w-full"
-        />
-      </label>
-      <label className="flex flex-col w-full">
-        <span className="p-1">Subject</span>
-        <input
-          type="subject"
-          name="subject"
-          required
-          className="p-4 border-black border-2 text-2xl w-full"
-        />
-      </label>
+      <div className="sm:flex sm:flex-row sm:gap-3 mt-3">
+        <label className="flex flex-col w-full sm:w-1/2">
+          <span className="p-1 text-xl">Email</span>
+          <input
+            type="email"
+            name="email"
+            required
+            className="p-4 font-serif border-2 border-transparent border-b-white hover:border-white focus:border-white text-xl w-full h-1/2"
+          />
+        </label>
+        <label className="flex flex-col w-full sm:w-1/2">
+          <span className="p-1 text-xl">Subject</span>
+          <input
+            type="subject"
+            name="subject"
+            required
+            className="p-4 font-serif border-2 border-transparent border-b-white hover:border-white focus:border-white text-xl w-full h-1/2"
+          />
+        </label>
+      </div>
 
       <label className="flex flex-col w-full">
-        <span className="p-1">Message</span>
+        <span className="p-1 text-xl">Message</span>
         <textarea
           name="message"
           required
-          className="p-4 border-black border-2 text-2xl w-full min-h-64"
+          className="p-4 font-serif border-2 border-transparent border-b-white hover:border-white focus:border-white text-xl w-full min-h-32"
         />
       </label>
 
       <button
         type="submit"
-        className={`bg-black text-white py-4 px-8 text-xl border w-auto disable:opacity-50 ${
+        className={`bg-black mt-4 text-white py-4 px-8 text-xl border w-auto disable:opacity-50 ${
           loading ? "cursor-progress" : "cursor-pointer"
         }`}
       >
         {loading ? "Sending Message..." : "Send Message"}
       </button>
-      {successMessage && <p>{successMessage}</p>}
+      {successMessage && <p className="text-white text-xl">{successMessage}</p>}
     </form>
   );
 }
