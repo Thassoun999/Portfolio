@@ -22,6 +22,7 @@ export default function ContactForm() {
 
     if (loading) return;
 
+    setSuccessMessage("");
     setLoading(true);
 
     const formData = new FormData(e.currentTarget);
@@ -36,6 +37,9 @@ export default function ContactForm() {
     try {
       contactFormSchema.parse(values);
     } catch (err) {
+      setSuccessMessage(`Error In Contact Form: ${err.message} `);
+      setLoading(false);
+      // (document.getElementById("contact-form1") as HTMLFormElement).reset();
       throw new Error(`Contact Form Error: ${err}`);
     }
 
@@ -52,6 +56,9 @@ export default function ContactForm() {
       setLoading(false);
       (document.getElementById("contact-form1") as HTMLFormElement).reset();
     } catch (err) {
+      setSuccessMessage("Error Sending Email! Please Try Again!");
+      setLoading(false);
+      // (document.getElementById("contact-form1") as HTMLFormElement).reset();
       throw new Error(`Email Sending Error: ${err}`);
     }
   };
