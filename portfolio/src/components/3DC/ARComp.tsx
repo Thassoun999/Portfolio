@@ -22,7 +22,7 @@ export type ARProps = {
   className?: string;
 };
 
-function Loader() {
+export function Loader() {
   const { progress } = useProgress();
   console.log(progress);
   return <Html center>{progress} % loaded</Html>;
