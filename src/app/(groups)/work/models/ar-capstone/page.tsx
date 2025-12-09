@@ -72,7 +72,7 @@ export default function ARCapstone() {
           <p className="text-2xl md:text-4xl xl:text-5xl">
             Pinch Zoom Showcase for Mobile
           </p>
-          <video className="w-auto h-80 sm:h-100" controls>
+          <video className="w-auto h-80 sm:h-120" controls>
             <source src="/Media/Videos/Feature.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
