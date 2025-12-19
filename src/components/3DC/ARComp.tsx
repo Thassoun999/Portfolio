@@ -22,7 +22,7 @@ export type ARProps = {
 
 export function Loader() {
   const { progress } = useProgress();
-  console.log(progress);
+  //console.log(progress);
   return <Html center>{progress} % loaded</Html>;
 }
 
@@ -30,16 +30,18 @@ function Scene({ pathname, scale }: { pathname: string; scale: number[] }) {
   // const directionalLightRef = useRef<any>(null);
 
   const gltf = useLoader(GLTFLoader, pathname);
-  console.log("Loaded GLB:", gltf);
-  console.log("Scene children:", gltf.scene.children);
+  // console.log("Loaded GLB:", gltf);
+  // console.log("Scene children:", gltf.scene.children);
 
   const { actions, names } = useAnimations(gltf.animations, gltf.scene);
 
   const ref = useRef<THREE.Mesh>(null);
 
+  /*
   useEffect(() => {
-    console.log("Model mounted:", pathname);
+    // console.log("Model mounted:", pathname);
   }, [pathname]);
+  */
 
   useEffect(() => {
     if (names.length > 0) {
@@ -52,7 +54,6 @@ function Scene({ pathname, scale }: { pathname: string; scale: number[] }) {
   }, [actions, names]);
   gltf.scene.scale.set(scale[0], scale[1], scale[2]);
 
-  console.log();
   return (
     <>
       <directionalLight position={[0, 0, 2]} intensity={0.5} />

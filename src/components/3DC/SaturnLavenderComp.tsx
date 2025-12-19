@@ -12,7 +12,7 @@ export type SaturnLavenderProps = {
 
 function Loader() {
   const { progress } = useProgress();
-  console.log(progress);
+  // console.log(progress);
   return <Html center>{progress} % loaded</Html>;
 }
 
@@ -20,8 +20,8 @@ function Scene({ pathname }: { pathname: string }) {
   // const directionalLightRef = useRef<any>(null);
 
   const gltf = useLoader(GLTFLoader, pathname);
-  console.log("Loaded GLB:", gltf);
-  console.log("Scene children:", gltf.scene.children);
+  // console.log("Loaded GLB:", gltf);
+  // console.log("Scene children:", gltf.scene.children);
 
   gltf.scene.scale.set(20, 20, 20);
   return (

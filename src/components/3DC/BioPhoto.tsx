@@ -62,7 +62,7 @@ function Scene({ scale }: { scale: number[] }) {
     uMouse: { value: mouse },
   });
 
-  console.log(mouse);
+  // console.log(mouse);
 
   useFrame(() => {
     if (meshRef.current && meshRef.current.material) {
