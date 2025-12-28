@@ -47,10 +47,10 @@ export default function LTP() {
           Website Developer and Designer
         </h2>
         <p className="text-2xl md:text-4xl xl:text-5xl">
-          Designed and developed the current iteration of the LTP website, its
-          resource organization, widgets, central donations widget, and
-          historichal archiving. This is a continued project and as of right now
-          I am still engaged in maintenance and adding new web features.
+          Designing and Developing the current iteration of the LTP website, its
+          resource organization, widgets, central donation features, historichal
+          archiving, and recruitment page. This is a continued project and as of
+          right now I am still part of the development team.
         </p>
       </div>
       <div className="w-full sm:w-1/2 sm:pt-15 ">
