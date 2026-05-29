@@ -1,13 +1,11 @@
 "use client";
-
 import { useState } from "react";
 // TS first validation library
 import { z } from "zod";
 
-//backwardssunrisestudios@gmail.com
 const contactFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
-  email: z.email("Invalid email address"),
+  email: z.string().email("Invalid email address"),
   subject: z.string().min(1, "Subject is required"),
   message: z.string().min(10, "Message must be at least 10 characters."),
 });
@@ -17,16 +15,12 @@ export default function ContactForm() {
   const [successMessage, setSuccessMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    // Prevents the default action from this event from occurring
     e.preventDefault();
-
     if (loading) return;
-
     setSuccessMessage("");
     setLoading(true);
 
     const formData = new FormData(e.currentTarget);
-
     const values = {
       name: formData.get("name"),
       email: formData.get("email"),
@@ -37,15 +31,13 @@ export default function ContactForm() {
     try {
       contactFormSchema.parse(values);
     } catch (err) {
-      setSuccessMessage(`Error In Contact Form: ${err.message} `);
+      setSuccessMessage(`Error In Contact Form: ${(err as Error).message}`);
       setLoading(false);
-      // (document.getElementById("contact-form1") as HTMLFormElement).reset();
       throw new Error(`Contact Form Error: ${err}`);
     }
 
     formData.append("access_key", "4089fd0c-84aa-4882-8ae0-98e7eeac2318");
 
-    // next we send the email
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -58,7 +50,6 @@ export default function ContactForm() {
     } catch (err) {
       setSuccessMessage("Error Sending Email! Please Try Again!");
       setLoading(false);
-      // (document.getElementById("contact-form1") as HTMLFormElement).reset();
       throw new Error(`Email Sending Error: ${err}`);
     }
   };
@@ -75,7 +66,7 @@ export default function ContactForm() {
           type="text"
           name="name"
           required
-          className="p-4 font-serif border-2 border-transparent border-b-white hover:border-white focus:border-white  text-xl w-full h-1/2"
+          className="p-4 font-serif border-2 border-transparent border-b-white hover:border-white focus:border-white text-xl w-full h-1/2"
         />
       </label>
       <div className="sm:flex sm:flex-row sm:gap-3 mt-3">
@@ -98,7 +89,6 @@ export default function ContactForm() {
           />
         </label>
       </div>
-
       <label className="flex flex-col w-full">
         <span className="p-1 text-xl">Message</span>
         <textarea
@@ -107,7 +97,6 @@ export default function ContactForm() {
           className="p-4 font-serif border-2 border-transparent border-b-white hover:border-white focus:border-white text-xl w-full min-h-32"
         />
       </label>
-
       <button
         type="submit"
         className={`bg-black mt-4 text-white py-4 px-8 text-xl border w-auto disable:opacity-50 ${
