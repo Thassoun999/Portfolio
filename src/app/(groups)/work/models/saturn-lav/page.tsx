@@ -37,6 +37,7 @@ export default function SaturnLavender() {
           <p className="text-2xl md:text-4xl xl:text-5xl">
             Link:{" "}
             <Link
+              target="_blank"
               className="hover:text-red-400"
               href={"https://www.xandralouvre.com/"}
             >

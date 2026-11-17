@@ -109,7 +109,7 @@ export default function Honcho() {
           height={64}
         />
         <div className="space-y-2 sm:space-y-4 text-white w-full mb-2">
-          <Link href={"https://www.honchocampout.com/"}>
+          <Link target="_blank" href={"https://www.honchocampout.com/"}>
             <h1 className="text-4xl md:text-6xl xl:text-7xl hover:text-red-400">
               Honcho Campout 2026
             </h1>
@@ -126,18 +126,18 @@ export default function Honcho() {
           <br />
           <h2 className="text-3xl md:text-5xl xl:text-6xl">Website</h2>
           <p className="text-2xl md:text-4xl xl:text-5xl">
-            Designed and developed the entire 2026 iteration of Honcho Campout
-            2026. The site was built on Webflow's infrastructure with additional
-            features such as the interative program scheduling page and the
-            interactive 3D map made independently by Backwards Sunrise on React,
-            Blender, and Three.JS frameworks.
+            Designed and developed the entire 2026 website iteration of Honcho
+            Campout 2026. The site was built on Webflow's infrastructure with
+            additional features such as the interactive program scheduling page
+            and the interactive 3D map made independently by Backwards Sunrise
+            on React, Blender, and Three.JS frameworks.
           </p>
           <br />
           <p className="text-2xl md:text-4xl xl:text-5xl">
             The site integration uses a Zapier + Airtable backend and features
-            accessibility tools alternative views, navigations, and coloring.
-            Additional third-party support for Shopify and Tixr provided by
-            Webflow's internal library.
+            accessibility tools for alternative views, navigations, and
+            coloring. Additional third-party support for Shopify and Tixr
+            provided by Webflow's internal library.
           </p>
           <br />
         </div>
@@ -172,6 +172,7 @@ export default function Honcho() {
           <h2 className="text-3xl md:text-5xl xl:text-6xl">Interactive Map</h2>
           <p className="text-2xl md:text-4xl xl:text-5xl">
             <Link
+              target="_blank"
               href={"../models/honcho-map"}
               className="underline hover:text-red-400"
             >

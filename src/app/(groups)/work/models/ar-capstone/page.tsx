@@ -29,6 +29,7 @@ export default function ARCapstone() {
           <p className="text-2xl md:text-4xl xl:text-5xl">
             Link:{" "}
             <Link
+              target="_blank"
               className="hover:text-red-400"
               href={
                 "https://github.com/Thassoun999/Unity-Class-Certificate-Work"

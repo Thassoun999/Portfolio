@@ -30,7 +30,7 @@ export default function LTP() {
           height={64}
         />
 
-        <Link href={"https://letstalkpalestine.com/"}>
+        <Link target="_blank" href={"https://letstalkpalestine.com/"}>
           <h1 className="text-4xl md:text-6xl xl:text-7xl hover:text-red-400">
             LTP
           </h1>

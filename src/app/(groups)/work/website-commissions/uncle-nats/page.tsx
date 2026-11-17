@@ -13,7 +13,7 @@ export default function UncleNats() {
           alt={"Diamond Object"}
           className=""
         />
-        <Link href={"https://www.unclenats.com/"}>
+        <Link target="_blank" href={"https://www.unclenats.com/"}>
           <h1 className="text-4xl md:text-6xl xl:text-7xl hover:text-red-400">
             {"Uncle Nat's"}
           </h1>

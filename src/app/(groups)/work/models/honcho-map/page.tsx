@@ -8,7 +8,7 @@ export default function HonchoMap() {
           Honcho Campout 2026 Interactive Map
         </h1>
         <h2 className="text-3xl md:text-5xl xl:text-6xl hover:text-red-400">
-          <Link href={"../website-commissions/honcho-2026"}>
+          <Link target="_blank" href={"../website-commissions/honcho-2026"}>
             Click here for info
           </Link>
         </h2>

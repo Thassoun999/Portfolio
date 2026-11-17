@@ -28,7 +28,7 @@ export default function LADG() {
           alt={"Star Object"}
           className=""
         />
-        <Link href={"https://theladg.com/"}>
+        <Link target="_blank" href={"https://theladg.com/"}>
           <h1 className="text-4xl md:text-6xl xl:text-7xl hover:text-red-400">
             The Los Angeles Design Group
           </h1>
