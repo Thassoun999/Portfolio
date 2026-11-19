@@ -27,9 +27,9 @@ export default function About() {
             Sydra has over 6 years of professional experience and is currently
             freelancing in Website Development, 3D Modeling / Animation, Game
             Development, and Graphic Design. She places heavy emphasis on
-            choosing clientel that align with her values. To work with Backwards
-            Sunrise, please submit a form through the Contact page. No AI
-            Requests.
+            choosing clientele that align with her values. To work with
+            Backwards Sunrise, please submit a form through the Contact page. No
+            AI Requests.
           </p>
         </div>
       </div>
